@@ -1,7 +1,7 @@
 @media print {
   html,
   body {
-    height: 99%;
+    height: 100%;
   }
 
   .print-hide {

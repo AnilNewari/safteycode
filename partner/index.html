@@ -240,8 +240,8 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Mobile</th>
-                        <th scope="col">QR ID</th>
-                        <th scope="col">Payment</th>
+                        <th scope="col">Vehicle No</th>
+                        <th scope="col">Reg Date</th>
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
@@ -356,13 +356,16 @@
             let vehicle = '';
             if (data.vehicles) {
                 for (let i = 0; i < data.vehicles.length; i++) {
+                    var date1 = new Date(data.vehicles[i].createdAt);
+                    var jDate1 = date1.toString();
+                    var newDate1 = formatDate(jDate1);
                     vehicle = vehicle + `<tr>
                         <th scope="row">${i + 1}</th>
                         <td>${data.vehicles[i].user.fullName}</td>
                         <td>${data.vehicles[i].user.mobile}</td>
-                        <td>${data.vehicles[i].qrId}</td>
-                        <td>${data.vehicles[i].paymentStatus}</td>
-                        <td>${data.vehicles[i].status}</td>
+                        <td>${data.vehicles[i].vehicleRegNo}</td>
+                        <td>${newDate1}</td>
+                        <td>${data.vehicles[i].status?'Active':'Inactive'}</td>
                     </tr>`
                 }
                 document.getElementById("vehicle").innerHTML = vehicle;
