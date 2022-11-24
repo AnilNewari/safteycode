@@ -746,16 +746,19 @@
     var fullName = document.getElementById('fullName').value;
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
-    var body = 'fullName: ' +fullName + '<br/> email: ' +email + '<br/> message' +message;
+    var body = 'fullName: ' +fullName + '<br/> email: ' +email + '<br/> message:' +message;
 
 
 
 
     Email.send({
-    SecureToken : "92904675-6b39-410d-a9cc-a9a065b018c4",
+    Username : "safteycode01@gmail.com",
+    Password: "56414C5E95402A3D3903AC24EDF29A99C9C3",
+    Host: "smtp.elasticemail.com",
+    Port: 2525,
     To : 'safteycode01@gmail.com',
-    From : email,
-    Subject : "This is the subject",
+    From : "safteycode01@gmail.com",
+    Subject : "New Enquiry",
     Body : body
 }).then(
   message => alert(message)
